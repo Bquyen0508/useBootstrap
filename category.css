@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    display: block;
+    border:0px !important;
+}
+.shape{
+    border:1px solid gainsboro ;
+    padding: 0 !important;
+}
