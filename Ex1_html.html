@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="Ex1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container bg-secondary text-center p-3">
+        <h1 class="text-primary">BANG DIEM CUA EM</h1>
+        <div class="row mb-1">
+            <span class="col-sm-4">Semester1: </span>
+            <input class="col-sm-5" type="number" name="inputa" id="text_1">
+        </div>
+        <div class="row mb-1">
+            <span class="col-sm-4">Semester2: </span>
+            <input class="col-sm-5" type="number" name="inputa" id="text_2">
+        </div>
+        <div class="row mb-1">
+            <span class="col-sm-4">Year:</span>
+            <select class="col-sm-1" name="Select" id="select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="row mb-5">
+            <span class="col-sm-4">Summarise:</span>
+            <div class="col-sm-5 bg-white" id="average"></div>
+        </div>
+        <div class="row mb-1 d-flex justify-content-center">
+           <p class="text-danger" id="result" ></p>
+        </div>
+            <input class="btn btn-light " type="button" name="ok" id="ok" value="Ok" onclick="myFunction1()">
+            <input class="btn btn-light " type="button" name="cancel" id="cancel" value="Cancel" onclick="myFunction2()">
+    </div>
+</body>
+</html>
