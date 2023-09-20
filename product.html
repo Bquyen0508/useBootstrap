@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <form name="frm">
+        <form name="frm" >
             <h1>New Product</h1>
             <hr>
             <div class="row mb-2">
@@ -25,7 +25,7 @@
                 <input class="mr-2" id="disc" name="disc" type="number">
             </div>
             <div class="row mb-2">
-                <button id="sell" class="mr-2" onclick="sell()">Sell</button>
+                <button type="button" id="sell" class="mr-2" onclick="sell()">Sell</button>
                 <button id="cancel">Cancle</button>
             </div>
         </form>
@@ -45,12 +45,24 @@
  
         function sell(){
             id++;
+            var frm = document.getElementById("frm")
             var pname = frm.pname.value;
+            alert(pname);
             var qty = parseInt(frm.qty.value);
+            alert(qty);
+
             var price = parseInt(frm.price.value);
+            alert(price);
+
             var disc = parseFloat(frm.disc.value);
+            alert(disc);
+
             var sub = qty*price*(1-disc/100);
+            alert(sub);
+
             var row ="<tr>";
+            alert(row);
+
             row += "<td>" + id + "</td>";
             row += "<td>" + pname + "</td>";
             row += "<td>" + qty + "</td>";
@@ -58,7 +70,7 @@
             row += "<td>" + disc + "</td>";
             row += "<td>$" + sub + "</td>"; 
             row += "</tr>" ;
-            document.getElementById('tb1').innerHTML +=row;
+            document.getElementById('tb1').innerHTML += row;
         }
     </script>
 </body>

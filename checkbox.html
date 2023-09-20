@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Purchase</title>
+</head>
+<body>
+    <div class="container bg-light text-center">
+        <h1 class="text-danger">Welcome to Langmaster IELTS center</h1>
+        <p class="pt-4 font-weight-bold" >Please choosing skill you want to learn, you can choose multiple options belows:</p>
+        <div class="row justify-content-center">
+            <div class="col-sm-2">
+                <input class="mr-1" type="checkbox" name="speaking" id="speak" value="Speaking">
+                <label for="speaking" class="">Speaking - 400000</label>
+            </div>
+            <div class="col-sm-2">
+                <input class="mr-1" type="checkbox" name="listening" id="lis" value="Listening">
+                <label for="listening">Listening - 300000</label>
+            </div>
+            <div class="col-sm-2">
+                <input class="mr-1" type="checkbox" name="reading" id="read" value="Reading">
+                <label for="reading">Reading - 400000</label>
+            </div>
+            <div class="col-sm-2">
+                <input class="mr-1" type="checkbox" name="writing" id="wri" value="Writing">
+                <label for="writing">Writing - 600000</label>
+            </div>
+        </div>
+        <p class="font-weight-bold">What is your job position? You must only choose one option:</p>
+        <div class="row justify-content-center">
+            <div class="mr-3">
+                <input class="mr-1" type="radio" name="student" id="student" value="Student">
+                <label for="student">Student</label>
+            </div>
+            <div class="mr-3">
+                <input class="mr-1" type="radio" name="college" id="college" value="College student">
+                <label for="college">College student</label>
+            </div>
+            <div class="mr-3">
+                <input class="mr-1" type="radio" name="employee" id="employee" value="Employee">
+                <label for="employee">Employee</label>
+            </div>
+        </div class="mr-3">
+            <div class="btn row">
+                <button class="btn btn-primary" onclick="OK()">OK</button>
+                <button class="btn btn-primary" onclick="Cancle()">Cancle</button>
+        </div>
+        <hr>
+        <div>
+            <p id="result"></p>
+            <p id="option"></p>
+            <P id="discount"></P>
+            <p id="thanks"></p>
+        </div>
+    </div>
+    <script>
+        var checkbox = document.getElementById("speak");
+        checkbox.style.transform = "scale(1.5)";
+        var checkbox = document.getElementById("lis");
+        checkbox.style.transform = "scale(1.5)";
+        var checkbox = document.getElementById("wri");
+        checkbox.style.transform = "scale(1.5)";
+        var checkbox = document.getElementById("read");
+        checkbox.style.transform = "scale(1.5)";
+
+        function OK(){
+            var speakCheckbox = document.getElementById("speak");
+            var lisCheckbox = document.getElementById("lis");
+            var writeCheckbox = document.getElementById("wri");
+            var readCheckbox = document.getElementById("read");
+
+            var studentRadio = document.getElementById("student");
+            var collegeRadio = document.getElementById("college");
+            var employeeRadio = document.getElementById("employee");
+          
+            var LisValue = 300000;
+            var ReadValue = 400000;
+            var SpeakValue = 500000;
+            var WriteValue = 600000;
+          
+            var totalPrice = 0;
+          
+            // Tính giá trị các checkbox được chọn
+            if (lisCheckbox.checked) {
+              totalPrice += LisValue;
+            }
+            if (readCheckbox.checked) {
+              totalPrice += ReadValue;
+            }
+            if (speakCheckbox.checked) {
+              totalPrice += SpeakValue;
+            }
+            if (writeCheckbox.checked) {
+              totalPrice += WriteValue;
+            }
+          
+
+            // Áp dụng giảm giá dựa trên lựa chọn radio
+            if (studentRadio.checked) {
+              totalPrice *= 0.9; // Giảm 10%
+            } else if (collegeRadio.checked) {
+              totalPrice *= 0.8; // Giảm 20%
+            } else {
+              totalPrice *= 0.7; // Giảm 30%
+            }
+     
+            document.getElementById('result').innerHTML= "Your total price is: "+totalPrice +"VND";
+
+            var selectedOptions = "This is your option:  ";
+            ;
+              // Kiểm tra các checkbox được chọn
+            if (lisCheckbox.checked) {
+                selectedOptions += "Listening " ;
+            }
+            if (readCheckbox.checked) {
+                selectedOptions += "Reading ";
+            }
+            if (speakCheckbox.checked) {
+                selectedOptions += "Speaking ";
+            }
+            if (writeCheckbox.checked) {
+                selectedOptions += "Writing ";
+            }
+            document.getElementById('option').innerHTML= selectedOptions;
+            
+
+            // Kiểm tra radio button được chọn
+            var discount = "";
+            if (studentRadio.checked) {
+                discount += "Your discount is 10%";
+            } else if (collegeRadio.checked) {
+                discount += "Your discount is 20%";
+            } else {
+                discount += "Your discount is 30%";
+            }
+
+            document.getElementById('discount').innerHTML = discount;
+            document.getElementById('thanks').innerHTML = "Thank you so much for choosing our center!"            
+        }
+        function Cancle() {
+            
+        }
+    </script>
+</body> 
+</html>
