@@ -10,23 +10,23 @@
 <body>
     <div class="container bg-light text-center">
         <h1 class="text-danger">Welcome to Langmaster IELTS center</h1>
-        <p class="pt-4 font-weight-bold" >Please choosing skill you want to learn, you can choose multiple options belows:</p>
+        <p class="pt-4 font-weight-bold">Please choosing skill you want to learn, you can choose multiple options belows:</p>
         <div class="row justify-content-center">
             <div class="col-sm-2">
-                <input class="mr-1" type="checkbox" name="speaking" id="speak" value="Speaking">
-                <label for="speaking" class="">Speaking - 400000</label>
+                <input class="mr-1" type="checkbox" name="speaking" id="speak" value="500">
+                <label for="speaking" class="">Speaking - 500K</label>
             </div>
             <div class="col-sm-2">
-                <input class="mr-1" type="checkbox" name="listening" id="lis" value="Listening">
-                <label for="listening">Listening - 300000</label>
+                <input class="mr-1" type="checkbox" name="listening" id="lis" value="300">
+                <label for="listening">Listening - 300K</label>
             </div>
             <div class="col-sm-2">
-                <input class="mr-1" type="checkbox" name="reading" id="read" value="Reading">
-                <label for="reading">Reading - 400000</label>
+                <input class="mr-1" type="checkbox" name="reading" id="read" value="400">
+                <label for="reading">Reading - 400K</label>
             </div>
             <div class="col-sm-2">
-                <input class="mr-1" type="checkbox" name="writing" id="wri" value="Writing">
-                <label for="writing">Writing - 600000</label>
+                <input class="mr-1" type="checkbox" name="writing" id="wri" value="600">
+                <label for="writing">Writing - 600K</label>
             </div>
         </div>
         <p class="font-weight-bold">What is your job position? You must only choose one option:</p>
@@ -46,7 +46,6 @@
         </div class="mr-3">
             <div class="btn row">
                 <button class="btn btn-primary" onclick="OK()">OK</button>
-                <button class="btn btn-primary" onclick="Cancle()">Cancle</button>
         </div>
         <hr>
         <div>
@@ -76,41 +75,33 @@
             var collegeRadio = document.getElementById("college");
             var employeeRadio = document.getElementById("employee");
           
-            var LisValue = 300000;
-            var ReadValue = 400000;
-            var SpeakValue = 500000;
-            var WriteValue = 600000;
-          
             var totalPrice = 0;
           
             // Tính giá trị các checkbox được chọn
             if (lisCheckbox.checked) {
-              totalPrice += LisValue;
+              totalPrice += 300;
             }
             if (readCheckbox.checked) {
-              totalPrice += ReadValue;
+              totalPrice += 400;
             }
             if (speakCheckbox.checked) {
-              totalPrice += SpeakValue;
+              totalPrice += 500;
             }
             if (writeCheckbox.checked) {
-              totalPrice += WriteValue;
+              totalPrice += 600;
             }
           
-
             // Áp dụng giảm giá dựa trên lựa chọn radio
             if (studentRadio.checked) {
-              totalPrice *= 0.9; // Giảm 10%
+              totalPrice = totalPrice*0.9; // Giảm 10%
             } else if (collegeRadio.checked) {
-              totalPrice *= 0.8; // Giảm 20%
+              totalPrice =totalPrice*0.8; // Giảm 20%
             } else {
-              totalPrice *= 0.7; // Giảm 30%
+              totalPrice =totalPrice*0.7; // Giảm 30%
             }
-     
             document.getElementById('result').innerHTML= "Your total price is: "+totalPrice +"VND";
 
             var selectedOptions = "This is your option:  ";
-            ;
               // Kiểm tra các checkbox được chọn
             if (lisCheckbox.checked) {
                 selectedOptions += "Listening " ;
@@ -126,7 +117,6 @@
             }
             document.getElementById('option').innerHTML= selectedOptions;
             
-
             // Kiểm tra radio button được chọn
             var discount = "";
             if (studentRadio.checked) {
@@ -136,12 +126,8 @@
             } else {
                 discount += "Your discount is 30%";
             }
-
             document.getElementById('discount').innerHTML = discount;
             document.getElementById('thanks').innerHTML = "Thank you so much for choosing our center!"            
-        }
-        function Cancle() {
-            
         }
     </script>
 </body> 
